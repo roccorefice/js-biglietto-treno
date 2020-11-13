@@ -15,16 +15,22 @@ var costoDiUnKm = 0.21;
 var prezzoIniziale = (costoDiUnKm * quantitaKm)
 console.log(prezzoIniziale);
 
-
 // va applicato uno sconto del 20% per i minorenni
 if (etaPasseggero <= 17) {
+  var scontoUnder = (20 * prezzoIniziale) / 100
+  console.log(scontoUnder);
+  var bigliettoScontatoUnder = (prezzoIniziale - scontoUnder)
+  console.log(bigliettoScontatoUnder);
 }
-var scontoBigliettoUnder = (20 * prezzoIniziale) / 100
-console.log(scontoBigliettoUnder);
-var bigliettoScontatoUnder = (prezzoIniziale - scontoBigliettoUnder)
-console.log(bigliettoScontatoUnder);
-
-
-
 
 // va applicato uno sconto del 40% per gli over 65
+else if (etaPasseggero >= 65) {
+  var scontoOver = (40 * prezzoIniziale) / 100
+  console.log(scontoOver);
+  var bigliettoScontatoOver = (prezzoIniziale - scontoOver)
+  console.log(bigliettoScontatoOver);
+}
+
+// nessuno sconto per passeggeri tra i 18 e 64 anni
+else (etaPasseggero >= 18 || etaPasseggero <= 64)
+  var bigliettoNoSconto = prezzoIniziale
